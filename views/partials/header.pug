@@ -1,0 +1,20 @@
+header.navbar.bg-base-100
+  .flex-1
+    a.btn.btn-ghost.text-xl(href="/") Simple Foundation
+    a.text-lg(href="/login") Login
+  .flex-none.gap-2
+    .form-control
+      input(class="input input-bordered w-24 md:w-auto" type="text", placeholder="Search")
+    .dropdown.dropdown-end
+      div.btn.btn-ghost.btn-circle.avatar(tabindex="0", role="button")
+        div.w-10.rounded-full
+          img(src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg", alt="Tailwind CSS Navbar component")
+      ul.menu.menu-sm.dropdown-content.bg-base-100.rounded-box.w-52(tabindex="0")
+        li
+          a.justify-between
+            | Profile
+            span.badge New
+        li
+          a Settings
+        li
+          a Logout

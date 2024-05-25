@@ -1,0 +1,19 @@
+{
+    "name": "healthcheck",
+    "routes": [
+      {
+        "method": "GET",
+        "path": "/healthcheck",
+        "handler": "./plugins/healthcheck/handlers/healthcheck.js",
+        "description": "Display health check information"
+      }
+    ],
+    "views": [
+      {
+        "name": "healthcheck",
+        "path": "/healthcheck",
+        "view": "./plugins/healthcheck/views/healthcheck.pug"
+      }
+    ]
+  }
+  

@@ -1,0 +1,18 @@
+extends ../layouts/base.pug
+
+block content
+  h2.text-xl.font-bold Admin Users
+  table.table-auto.w-full
+    thead
+      tr
+        th.px-4.py-2 Username
+        th.px-4.py-2 Role
+        th.px-4.py-2 Actions
+    tbody
+      each user in users
+        tr
+          td.px-4.py-2= user.username
+          td.px-4.py-2= user.role
+          td.px-4.py-2
+            form(action="/api/admin/delete-user" method="post" hx-delete="/api/admin/delete-user" hx-vals='{"username": "#{user.username}"}')
+              button.bg-red-500.text-white.px-2.py-1.rounded(type="submit") Delete

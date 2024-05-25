@@ -1,0 +1,43 @@
+{
+    "name": "userManager",
+    "routes": [
+      {
+        "method": "GET",
+        "path": "/admin/users",
+        "handler": "userManager.getAdminUsersPage",
+        "description": "Render user management page"
+      },
+      {
+        "method": "POST",
+        "path": "/api/admin/create-user",
+        "handler": "userManager.createAdminUser",
+        "description": "Create a new user"
+      },
+      {
+        "method": "DELETE",
+        "path": "/api/admin/delete-user",
+        "handler": "userManager.deleteAdminUser",
+        "description": "Delete a user"
+      },
+      {
+        "method": "GET",
+        "path": "/api/admin/users",
+        "handler": "userManager.listAdminUsers",
+        "description": "List all users"
+      }
+    ],
+    "middlewares": [
+      {
+        "name": "adminAuthMiddleware",
+        "path": "./middlewares/adminAuthMiddleware.js"
+      }
+    ],
+    "views": [
+      {
+        "name": "adminUsers",
+        "path": "/admin/users",
+        "view": "./views/adminUsers.pug"
+      }
+    ]
+  }
+  

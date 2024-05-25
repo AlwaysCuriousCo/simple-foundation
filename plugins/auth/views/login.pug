@@ -1,0 +1,13 @@
+extends ../layouts/base.pug
+
+block content
+  h2.text-xl.font-bold Login
+  form(action="/login" method="post" hx-post="/login" hx-target="#result" class="space-y-4")
+    div
+      label(for="username" class="block text-gray-700") Username:
+      input(type="text" name="username" required class="mt-1 p-2 border rounded w-full")
+    div
+      label(for="password" class="block text-gray-700") Password:
+      input(type="password" name="password" required class="mt-1 p-2 border rounded w-full")
+    button(type="submit" class="bg-blue-500 text-white px-4 py-2 rounded") Login
+  div#result.mt-4

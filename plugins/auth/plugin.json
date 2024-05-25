@@ -1,0 +1,54 @@
+{
+    "name": "auth",
+    "routes": [
+      {
+        "method": "GET",
+        "path": "/login",
+        "handler": "auth.renderLoginPage",
+        "description": "Render login page"
+      },
+      {
+        "method": "POST",
+        "path": "/login",
+        "handler": "auth.login",
+        "description": "Handle login"
+      },
+      {
+        "method": "GET",
+        "path": "/register",
+        "handler": "auth.renderRegisterPage",
+        "description": "Render registration page"
+      },
+      {
+        "method": "POST",
+        "path": "/register",
+        "handler": "auth.register",
+        "description": "Handle registration"
+      },
+      {
+        "method": "POST",
+        "path": "/logout",
+        "handler": "auth.logout",
+        "description": "Handle logout"
+      }
+    ],
+    "middlewares": [
+      {
+        "name": "authMiddleware",
+        "path": "./middlewares/authMiddleware.js"
+      }
+    ],
+    "views": [
+      {
+        "name": "login",
+        "path": "/login",
+        "view": "./views/login.pug"
+      },
+      {
+        "name": "register",
+        "path": "/register",
+        "view": "./views/register.pug"
+      }
+    ]
+  }
+  

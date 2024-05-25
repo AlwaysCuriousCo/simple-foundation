@@ -1,0 +1,10 @@
+extends /layouts/base.pug
+
+block content
+  .card.bg-base-100.shadow-lg
+    .card-body
+      h2.card-title Health Check
+      ul
+        li MongoDB: #{mongoStatus}
+        li Configurations:
+          pre.bg-base-200.p-2= config

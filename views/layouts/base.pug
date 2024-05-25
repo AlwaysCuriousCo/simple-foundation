@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Simple Foundation
+    link(rel="stylesheet" href="/styles/app.css")
+    script(src="https://unpkg.com/htmx.org")
+  body
+    include ../partials/header.pug
+
+    .container.mx-auto.flex
+      .sidebar(class="w-1/4 p-4 bg-base-200")
+        include ../partials/sidebar.pug
+      .content(class="w-3/4 p-4")
+        block content
+
+    include ../partials/footer.pug
